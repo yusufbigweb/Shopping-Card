@@ -58,7 +58,7 @@
     border: 1px solid;
 }
 .product-col img{
-    width: 100%;
+    width: 60%;
 }
 .quantity{
     display: flex;
@@ -74,5 +74,9 @@
 
 }
 .product-title, .description{
+    padding: 10px;
+}
+.center-image{
+    text-align: center;
     padding: 10px;
 }
