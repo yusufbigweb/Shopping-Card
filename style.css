@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+.main-header{
+    background-color: black;
+    padding: 20px 60px;
+}
+.logo a{
+    color: white; 
+    text-decoration: none;
+
+}
+.card {
+    position: relative;
+    background-color: white;
+    padding: 8px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.card i{
+    font-size: 30px;
+}
+.main-header nav{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.card-quantity{
+    background-color: red;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 5px; 
+    border-radius: 5px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 15px;
+}
+.main-product{
+    width: 80%;
+    margin: 0 auto;
+}
+.product-row{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 50px;
+}
+.product-col{
+    border: 1px solid;
+}
+.product-col img{
+    width: 100%;
+}
+.quantity{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+      font-size: 19px;
+    font-weight: 600;
+}
+.quan-count{
+    display: flex;
+    gap: 10px;
+
+}
+.product-title, .description{
+    padding: 10px;
+}
