@@ -63,4 +63,20 @@ const update = ()=>{}
 
 
 
+
+
+
+
+
+
+
+
+
 // https://www.youtube.com/watch?v=cT_ZYrS3tKc&t=4264s
+
+
+
+
+// create basic html, css product page
+// fetch date using freeproduct-api in javascript
+// 
