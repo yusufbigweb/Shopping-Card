@@ -1,6 +1,11 @@
 const api = "https://fakestoreapi.com/products";
 
-const basket = JSON.parse(localStorage.getItem("data")) || [];
+let basket = JSON.parse(localStorage.getItem("data")) || []; // localhost 
+
+
+// ==========
+// Product Template function
+// ==========
 
 async function fetchData() {
   const fetchHere = await fetch(api);
@@ -33,13 +38,14 @@ async function fetchData() {
                             </div>
                         </div>
                     </div>`;
-
-                })};
-
+  });
+}
 
 fetchData();
 
-
+// ==========
+// Increment function
+// ==========
 
 const increment = (incre) => {
   const search = basket.find((x) => x.id === incre);
@@ -52,35 +58,48 @@ const increment = (incre) => {
   } else {
     search.item += 1;
   }
-
-
   localStorage.setItem("data", JSON.stringify(basket));
 
   update(incre);
 };
 
+
+// ==========
+// Decreament function
+// ==========
+
 const decrement = (incre) => {
+
   const search = basket.find((x) => x.id === incre);
 
-  if (search.item === 0) return;
+
+  if (search === undefined) return;
+  else if (search.item === 0) return;
   else {
     search.item -= 1;
   }
+  update(incre);
 
   localStorage.setItem("data", JSON.stringify(basket));
+  basket = basket.filter((x)=> x.item !== 0)
 
-  console.log(basket)
 
-
-  update(incre);
 };
 
-const update = (id) => {
+// ==========
+// User Update Product Quantity function
+// ==========
+
+let update = (id) => {
   const search = basket.find((x) => x.id === id);
   document.getElementById(id).innerHTML = search.item;
 
-  calculation();
+calculation();
 };
+
+// ==========
+// User Cart Product Quantity function
+// ==========
 
 const calculation = () => {
   const cardQuantity = document.getElementById("card-quantity");
@@ -91,9 +110,16 @@ calculation();
 
 
 
-
 // https://www.youtube.com/watch?v=cT_ZYrS3tKc&t=4264s
 
 // create basic html, css product page
 // fetch date using freeproduct-api in javascript
 //
+
+
+//  Card Page
+
+// total bill 
+// two button showing checkout and clear Cart
+// product card image, title and amount, quantity, total amount of card product
+// top right conner button delete product card
